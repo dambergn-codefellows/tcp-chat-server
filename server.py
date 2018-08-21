@@ -60,9 +60,11 @@ class ChatServer(threading.Thread):
                 message = data[2:]
                 print('from: ' + str(nick) + '| to: ' + str(to_user) + ': ' + str(message))
                 for users in range(0, len(self.client_pool)):
+                    print('address:' + self.client_pool[users].addr)
                     if self.client_pool[users].nick == to_user:
                         print(self.client_pool[users].nick + 'found!')
-                        # conn.send.users.id(message)
+                        print('address:' + self.client_pool[users].addr)
+                        conn.sendto(message, self.client_pool[users].addr)
 
             else:
                 conn.sendall(b'Invalid command. Please try again.\n')
