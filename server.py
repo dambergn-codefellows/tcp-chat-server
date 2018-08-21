@@ -41,8 +41,21 @@ class ChatServer(threading.Thread):
                 del id
                 conn.close()
 
-            if data[0] == '@list':
-                print(self.client_pool[0].nick.encode())
+            elif data[0] == '@list':  
+                for users in range(0, len(self.client_pool)):
+                    print(self.client_pool[users].nick.encode())
+                    # print(len(self.client_pool))
+                    conn.sendall(self.client_pool[users].nick.encode())
+                    new_line = b'\n'
+                    conn.send(new_line)
+                    # list_users = self.client_pool[users].nick.encode()
+                    # [c.conn.sendall(list_users) for c in self.client_pool if len(self.client_pool)]
+
+            elif data[0] == '@nickname':
+                pass
+
+            elif data[0] == '@dm':
+                pass
 
             else:
                 conn.sendall(b'Invalid command. Please try again.\n')
