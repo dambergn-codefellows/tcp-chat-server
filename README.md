@@ -23,7 +23,8 @@ Co-lab Nick Damberg, J Christie
   - [ ]The client should send @dm <to-username> <message> to send a message directly to another user by nickname
 - [ ]Connected clients should be maintained as an in memory collection on the server instance called the client_pool
 - [X]When a socket emits the close event, the socket should be removed from the client_pool
-- [ ]When a socket emits the data event, the data should be logged on the server and the commands below should be implemented
+- [?]When a socket emits the data event, the data should be logged on the server and the commands below should be implemented
+ - there was nothing below this in the instructions.
 
 ## Change Log
 - @list prints all connected users.

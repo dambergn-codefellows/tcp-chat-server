@@ -49,7 +49,11 @@ class ChatServer(threading.Thread):
                     conn.send(new_line)
 
             elif data[0] == '@nickname':
-                pass
+                print('User changed name from : ' + nick + '  to: ' + str(data[1]))
+                # print(self.client_pool[0].nick)
+                for users in range(0, len(self.client_pool)):
+                    if self.client_pool[users].nick == nick:
+                        self.client_pool[users].nick = data[1]
 
             elif data[0] == '@dm':
                 pass
