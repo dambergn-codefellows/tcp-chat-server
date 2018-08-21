@@ -17,16 +17,17 @@ Co-lab Nick Damberg, J Christie
 - [X]Each client instance should be started on an individual thread using the threading module in Python
 - [X]Clients should be able to send messages to all other clients by sending it to the server without a special command
 - [ ]Clients should be able to run special commands by sending messages that start with a command name, for example:
-- [ ]The client should send @quit to disconnect (this should not stop the server… only the client that invoked @quit)
-- [X]The client should send @list to list all connectued users
-- [ ]The client should send @nickname <new-name> to change their nickname
-- [ ]The client should send @dm <to-username> <message> to send a message directly to another user by nickname
+  - [ ]The client should send @quit to disconnect (this should not stop the server… only the client that invoked @quit)
+  - [X]The client should send @list to list all connectued users
+  - [ ]The client should send @nickname <new-name> to change their nickname
+  - [ ]The client should send @dm <to-username> <message> to send a message directly to another user by nickname
 - [ ]Connected clients should be maintained as an in memory collection on the server instance called the client_pool
-- [ ]When a socket emits the close event, the socket should be removed from the client_pool
+- [X]When a socket emits the close event, the socket should be removed from the client_pool
 - [ ]When a socket emits the data event, the data should be logged on the server and the commands below should be implemented
 
 ## Change Log
 - @list prints all connected users.
+- User is removed from client_pool when quitting.
 
 ### 2018-08-20
 - Created wire frame
