@@ -35,6 +35,7 @@ Co-lab Nick Damberg, J Christie
 - User is removed from client_pool when quitting.
 - @nickname "new-name" allows user to change their screen name.
 - updated readme
+- Attempted to get @dm working, close but no cigar.
 
 
 

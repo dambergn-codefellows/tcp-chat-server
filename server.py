@@ -56,7 +56,13 @@ class ChatServer(threading.Thread):
                         self.client_pool[users].nick = data[1]
 
             elif data[0] == '@dm':
-                pass
+                to_user = data[1]
+                message = data[2:]
+                print('from: ' + str(nick) + '| to: ' + str(to_user) + ': ' + str(message))
+                for users in range(0, len(self.client_pool)):
+                    if self.client_pool[users].nick == to_user:
+                        print(self.client_pool[users].nick + 'found!')
+                        # conn.send.users.id(message)
 
             else:
                 conn.sendall(b'Invalid command. Please try again.\n')
