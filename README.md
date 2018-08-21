@@ -19,7 +19,7 @@ Co-lab Nick Damberg, J Christie
 - [ ]Clients should be able to run special commands by sending messages that start with a command name, for example:
   - [ ]The client should send @quit to disconnect (this should not stop the server… only the client that invoked @quit)
   - [X]The client should send @list to list all connectued users
-  - [ ]The client should send @nickname <new-name> to change their nickname
+  - [X]The client should send @nickname <new-name> to change their nickname
   - [ ]The client should send @dm <to-username> <message> to send a message directly to another user by nickname
 - [ ]Connected clients should be maintained as an in memory collection on the server instance called the client_pool
 - [X]When a socket emits the close event, the socket should be removed from the client_pool
@@ -27,12 +27,14 @@ Co-lab Nick Damberg, J Christie
  - there was nothing below this in the instructions.
 
 ## Change Log
-- @list prints all connected users.
-- User is removed from client_pool when quitting.
 
 ### 2018-08-20
 - Created wire frame
 - Created new branch class-06-tcp-chat
+- @list prints all connected users.
+- User is removed from client_pool when quitting.
+- @nickname "new-name" allows user to change their screen name.
+- updated readme
 
 
 
